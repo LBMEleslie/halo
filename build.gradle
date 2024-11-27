@@ -1,0 +1,33 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+
+buildscript {
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/public'
+            allowInsecureProtocol = true}
+        maven { url "https://dl.google.com/dl/android/maven2" }
+        mavenLocal()
+        mavenCentral()
+        google()
+    }
+    dependencies {
+        // 引入 google-service插件
+        classpath 'com.google.gms:google-services:4.3.15'
+    }
+}
+
+
+plugins {
+    id 'com.google.gms.google-services' version '4.3.15' apply false
+}
+
+
+allprojects {
+    repositories {
+        mavenCentral()
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url "https://dl.google.com/dl/android/maven2" }
+        maven { url 'https://jitpack.io' }
+        google()
+    }
+}
